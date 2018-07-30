@@ -1,21 +1,13 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
+    <img style="width: 100px; height; 100px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Smiley.svg/600px-Smiley.svg.png">
+    <h1>{{ msg }} {{ title }}</h1>
+    <hr>
+    <div style="border: 1px solid #ccc; width: 200px; margin:0 auto;">{{ title }}</div>
+    <br>
+    <input type="text" v-model="title">
+   
+    <button @click="newTitle()">New Title</button>
   </div>
 </template>
 
@@ -24,8 +16,16 @@ export default {
   name: 'app',
   data () {
     return {
-      msg: 'Hello Thillerup'
+      msg: 'Hello',
+      title: 'Thillerup'
     }
+  },
+  methods: {
+    newTitle() {
+//       alert('Hi');
+      this.title = 'New Title';
+    }
+    
   }
 }
 </script>
