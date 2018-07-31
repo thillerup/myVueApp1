@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <app-header></app-header>
     <img style="width: 100px; height; 100px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Smiley.svg/600px-Smiley.svg.png">
     <h1>{{ msg }} {{ title }}</h1>
     <hr>
@@ -12,8 +13,12 @@
 </template>
 
 <script>
+  import Header from './components/Header.vue'
 export default {
   name: 'app',
+  components: {
+    appHeader: Header
+  },
   data () {
     return {
       msg: 'Hello',
